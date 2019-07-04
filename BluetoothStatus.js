@@ -1,3 +1,4 @@
+cordova.define("cordova-plugin-bluetooth-status.BluetoothStatus", function(require, exports, module) {
 var exec = require('cordova/exec');
 
 var BluetoothStatus = function() {
@@ -14,6 +15,10 @@ BluetoothStatus.enableBT = function() {
     exec(null, null, "BluetoothStatus", "enableBT", []);
 };
 
+BluetoothStatus.disableBT = function() {
+    exec(null, null, "BluetoothStatus", "disableBT", []);
+};
+
 BluetoothStatus.promptForBT = function() {
     exec(null, null, "BluetoothStatus", "promptForBT", []);
 };
@@ -24,3 +29,4 @@ BluetoothStatus.BTenabled = false;
 BluetoothStatus.iosAuthorized = true;
 
 module.exports = BluetoothStatus;
+});
