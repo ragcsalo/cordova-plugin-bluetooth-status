@@ -40,6 +40,15 @@
 
     <platform name="ios">
         <framework src="CoreBluetooth.framework" />
+        
+        <preference name="BLUETOOTH_USAGE_DESCRIPTION" default=" " />
+        <config-file target="*-Info.plist" parent="NSBluetoothPeripheralUsageDescription">
+            <string>The app is scanning for Bluetooth Low Energy Peripherals to find compatible devices</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSBluetoothAlwaysUsageDescription">
+            <string>The app needs continuous Bluetooth connection to communicate with compatible devices</string>
+        </config-file>
+        
         <config-file parent="/*" target="config.xml">
             <feature name="BluetoothStatus">
                 <param name="ios-package" value="BluetoothStatus" />
